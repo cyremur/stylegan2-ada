@@ -61,7 +61,7 @@ def generate_images(network_pkl, truncation_psi, outdir, class_idx, dlatents1_np
 
         section = frame_idx // transition_frames
 
-        transition_i = frame_idx - transition_frames
+        transition_i = frame_idx - (transition_frames * section)
         maxindex = transition_frames-1.0
         # mu1 = min(max(0, (transition_i*1.0/maxindex) ), 1)                             # linear interpolation
         # mu1 = min(max(0, (transition_i*1.0/maxindex)*(transition_i*1.0/maxindex) ), 1) # quadratic interpolation
